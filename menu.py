@@ -27,14 +27,18 @@ def main():
             case "2":
                 mostrar_matriz(matriz)
             case "3":
-                pass
+                total_lineas = calcular_recaudacion_por_linea(matriz)
+                print(f"La recaudacion por línea es:{total_lineas}")
             case "4":
-                pass
+                total_coches = calcular_recaudacion_por_coche(matriz)
+                print(f"La recaudacion por coche es:{total_coches}")
             case "5":
-                pass
+                recaudacion_total = calcular_recaudacion_total(matriz)
+                print(f"La recaudacion total es de:{recaudacion_total}")                
             case "6":
                 print("Saliendo del programa")
                 break
+                
 
         os.system("pause")
         os.system("cls")

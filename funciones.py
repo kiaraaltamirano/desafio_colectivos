@@ -31,4 +31,21 @@ def pedir_numero(mensaje: str, mensaje_error: str) -> int|None:
         numero = int(input(mensaje))
     return numero
 
-numero = pedir_numero("Ingrese un número: ", "Error...")
+def calcular_recaudacion_por_linea(matriz: list) -> list:
+    totales_linea = []
+    for fila in matriz:
+        total = sum(fila)
+        totales_linea += [total]
+    return totales_linea
+
+def calcular_recaudacion_por_coche(matriz: list) -> list:
+    columnas = len(matriz[0])
+    totales_coche = [0] * columnas
+    for j in range(columnas):
+        totales_coche[j] = sum(matriz[i][j] for i in range(len(matriz)))
+    return totales_coche
+
+
+def calcular_recaudacion_total(matriz: list) -> int:
+    total = sum(sum(fila) for fila in matriz)
+    return total
