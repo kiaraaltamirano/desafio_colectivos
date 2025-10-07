@@ -115,19 +115,20 @@ def calcular_recaudacion_por_linea(matriz: list) -> list:
                 totales_fila[i] += matriz[i][j]
         return totales_fila
 
-def calcular_recaudacion_por_coche(matriz: list) -> list:
-    """Suma los elementos por cada columna individual de la matriz
+def calcular_recaudacion_por_coche(matriz: list, coche: int) -> int:
+    """Suma los elementos de una columna específica de la matriz
     Args:
-        matriz (list): Matriz utilizada para recorrer las columnas
+        matriz (list): Matriz utilizada para recorrer la columna
+        coche (int): numero de la columna a sumar
     Returns:
-        list: Devuelve una lista con el cálculo
+        int: Devuelve la suma de la columna especificada
     """
-    if verificar_tipo_entero(matriz):
-        totales_coche = [0] * len(matriz[0])
-        for j in range(len(matriz[0])):
-            for i in range(len(matriz)):
-                totales_coche[j] += matriz[i][j]
-        return totales_coche
+    if verificar_tipo_entero(matriz) and 0 <= coche < len(matriz[0]):
+        total_coche = 0
+        for i in range(len(matriz)):
+            total_coche += matriz[i][coche]
+        return total_coche
+    return 0
 
 def calcular_recaudacion_total(matriz: list) -> int:
     """Suma los datos de todos los elementos de la matriz

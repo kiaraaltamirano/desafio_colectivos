@@ -28,8 +28,9 @@ def main():
                 total_lineas = calcular_recaudacion_por_linea(matriz)
                 print(f"La recaudacion por línea es:{total_lineas}")
             case "4":
-                total_coches = calcular_recaudacion_por_coche(matriz)
-                print(f"La recaudacion por coche es:{total_coches}")
+                numero_coche = int(input("Ingrese el numero de coche (0-4): ")) 
+                total_coche = calcular_recaudacion_por_coche(matriz, numero_coche)
+                print(f"La recaudacion del coche es:{total_coche}")
             case "5":
                 recaudacion_total = calcular_recaudacion_total(matriz)
                 print(f"La recaudacion total es de:{recaudacion_total}") 
