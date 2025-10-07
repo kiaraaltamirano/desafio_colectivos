@@ -99,21 +99,22 @@ def verificar_tipo_entero(matriz: list, valor_inicial = 0) -> bool:
     
     return bandera
 
-def calcular_recaudacion_por_linea(matriz: list) -> list:
+def calcular_recaudacion_por_linea(matriz_recaudaciones: list) -> list:
     """Suma los elementos por cada fila individual de la matriz
     Args:
         matriz (list): Matriz utilizada para recorrer las filas
     Returns:
         list: Devuelve una lista con el cálculo
     """
-    if type(matriz) != list or len(matriz) == 0:
-        totales_fila = []
-    if verificar_tipo_entero(matriz):
-        totales_fila = [0] * len(matriz)
-        for i in range(len(matriz)):
-            for j in range(len(matriz[i])):
-                totales_fila[i] += matriz[i][j]
-        return totales_fila
+    recaudacion_linea = crear_vector(len(matriz_recaudaciones))
+    for i in range(len(matriz_recaudaciones)):
+        suma = 0
+        for j in range(len(matriz_recaudaciones[i])):
+            suma += matriz_recaudaciones[i][j]
+        recaudacion_linea[i] = suma
+    return recaudacion_linea
+
+#falta la funcion crear vector
 
 def calcular_recaudacion_por_coche(matriz: list, coche: int) -> int:
     """Suma los elementos de una columna específica de la matriz
