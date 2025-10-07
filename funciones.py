@@ -100,7 +100,6 @@ def verificar_tipo_entero(matriz: list, valor_inicial = 0) -> bool:
     return bandera
 
 def calcular_recaudacion_por_linea(matriz: list) -> list:
-<<<<<<< HEAD
     """Suma los elementos por cada fila individual de la matriz
     Args:
         matriz (list): Matriz utilizada para recorrer las filas
@@ -110,11 +109,6 @@ def calcular_recaudacion_por_linea(matriz: list) -> list:
     if type(matriz) != list or len(matriz) == 0:
         totales_fila = []
     if verificar_tipo_entero(matriz):
-=======
-    if not isinstance(matriz, list) or len(matriz) == 0:
-        return []
-    if verificar_tipo_entero(matriz) and validar_rango_filas(matriz, 0, len(matriz)-1):
->>>>>>> 79fdbcc4e74631ebb0123da3cf375612e9c370b1
         totales_fila = [0] * len(matriz)
         for i in range(len(matriz)):
             for j in range(len(matriz[i])):
@@ -122,7 +116,6 @@ def calcular_recaudacion_por_linea(matriz: list) -> list:
         return totales_fila
 
 def calcular_recaudacion_por_coche(matriz: list) -> list:
-<<<<<<< HEAD
     """Suma los elementos por cada columna individual de la matriz
     Args:
         matriz (list): Matriz utilizada para recorrer las columnas
@@ -130,9 +123,6 @@ def calcular_recaudacion_por_coche(matriz: list) -> list:
         list: Devuelve una lista con el cálculo
     """
     if verificar_tipo_entero(matriz):
-=======
-    if verificar_tipo_entero(matriz) and validar_rango_columnas(matriz, 0, len(matriz[0])-1):
->>>>>>> 79fdbcc4e74631ebb0123da3cf375612e9c370b1
         totales_coche = [0] * len(matriz[0])
         for j in range(len(matriz[0])):
             for i in range(len(matriz)):
@@ -140,21 +130,14 @@ def calcular_recaudacion_por_coche(matriz: list) -> list:
         return totales_coche
 
 def calcular_recaudacion_total(matriz: list) -> int:
-<<<<<<< HEAD
     """Suma los datos de todos los elementos de la matriz
     Args:
         matriz (list): Matriz de donde se sacarán los valores
     Returns:
         int: La suma total
     """
-=======
->>>>>>> 79fdbcc4e74631ebb0123da3cf375612e9c370b1
     suma_total = 0
     for i in range(len(matriz)):
         for j in range(len(matriz[0])):
             suma_total += matriz[i][j]
-<<<<<<< HEAD
     return suma_total
-=======
-    return suma_total
->>>>>>> 79fdbcc4e74631ebb0123da3cf375612e9c370b1
