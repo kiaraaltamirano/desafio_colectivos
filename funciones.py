@@ -59,21 +59,26 @@ def validar_rango_columnas(matriz: list, inicio: int, fin: int) -> bool:
     return bandera
 
 def calcular_recaudacion_por_linea(matriz: list) -> list:
-    totales_linea = []
-    if verificar_tipo_entero(matriz) == True and validar_rango_filas(matriz, 1, 3) == True:
-        for fila in matriz:
-            total = sum(fila)
-            totales_linea += [total]
-    return totales_linea
+    if not isinstance(matriz, list) or len(matriz) == 0:
+        return []
+    if verificar_tipo_entero(matriz) and validar_rango_filas(matriz, 0, len(matriz)-1):
+        totales_fila = [0] * len(matriz)
+        for i in range(len(matriz)):
+            for j in range(len(matriz[i])):
+                totales_fila[i] += matriz[i][j]
+        return totales_fila
 
 def calcular_recaudacion_por_coche(matriz: list) -> list:
-    columnas = len(matriz[0])
-    totales_coche = [0] * columnas
-    if verificar_tipo_entero(matriz) == True and validar_rango_columnas(matriz, 0, 4) == True:
-        for j in range(columnas):
-            totales_coche[j] = sum(matriz[i][j] for i in range(len(matriz)))
-    return totales_coche
+    if verificar_tipo_entero(matriz) and validar_rango_columnas(matriz, 0, len(matriz[0])-1):
+        totales_coche = [0] * len(matriz[0])
+        for j in range(len(matriz[0])):
+            for i in range(len(matriz)):
+                totales_coche[j] += matriz[i][j]
+        return totales_coche
 
 def calcular_recaudacion_total(matriz: list) -> int:
-    total = sum(sum(fila) for fila in matriz)
-    return total
+    suma_total = 0
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
+            suma_total += matriz[i][j]
+    return suma_total
