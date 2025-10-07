@@ -13,7 +13,7 @@ def main():
 
         match opcion:
             case "1":
-                numero_legajo = int(input("Ingrese el legajo: "))
+                numero_legajo = int(input("Ingrese el legajo: ")) #Hacer una funcion para pedir el numero
                 # print(validar_legajo(legajos, numero_legajo))
                 validacion = validar_legajo(legajos, numero_legajo)
                 seguir = "si"
@@ -27,11 +27,15 @@ def main():
             case "2":
                 mostrar_matriz(matriz)
             case "3":
+                total_lineas = calcular_recaudacion_por_linea(matriz)
+                print(f"La recaudacion por línea es:{total_lineas}")
                 pass
             case "4":
-                pass
+                total_coches = calcular_recaudacion_por_coche(matriz)
+                print(f"La recaudacion por coche es:{total_coches}")
             case "5":
-                pass
+                recaudacion_total = calcular_recaudacion_total(matriz)
+                print(f"La recaudacion total es de:{recaudacion_total}") 
             case "6":
                 print("Saliendo del programa")
                 break
