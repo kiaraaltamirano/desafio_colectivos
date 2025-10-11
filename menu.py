@@ -24,9 +24,15 @@ def main():
                 total_lineas = calcular_recaudacion_por_linea(matriz)
                 print(f"La recaudacion por línea es:{total_lineas}") #falta mostrar_recaudaciones
             case "4":
+<<<<<<< HEAD
                 coche = ingresar_numero_entero("Ingrese el número de coche: ","Error, reingrese el número",1,5,2)
                 total_coches = calcular_recaudacion_por_coche(matriz,coche)
                 print(f"La recaudacion del coche {coche} es:{total_coches}")
+=======
+                numero_coche = int(input("Ingrese el numero de coche (0-4): ")) 
+                total_coche = calcular_recaudacion_por_coche(matriz, numero_coche)
+                print(f"La recaudacion del coche es:{total_coche}")
+>>>>>>> dbc1b10a25387f9024876290165799d22793357e
             case "5":
                 recaudacion_total = calcular_recaudacion_total(matriz)
                 print(f"La recaudacion total es de:{recaudacion_total}") 
