@@ -137,7 +137,6 @@ def verificar_tipo_entero(matriz: list, valor_inicial = 0) -> bool:
     
     return bandera
 
-<<<<<<< HEAD
 def crear_vector(size: int, value: any):
     """Crea un vector
     Args:
@@ -150,16 +149,12 @@ def crear_vector(size: int, value: any):
     return lista
 
 def calcular_recaudacion_por_linea(matriz: list) -> list:
-=======
-def calcular_recaudacion_por_linea(matriz_recaudaciones: list) -> list:
->>>>>>> dbc1b10a25387f9024876290165799d22793357e
     """Suma los elementos por cada fila individual de la matriz
     Args:
         matriz (list): Matriz utilizada para recorrer las filas
     Returns:
         list: Devuelve una lista con el cálculo
     """
-<<<<<<< HEAD
     recaudacion_linea = crear_vector(len(matriz),0)
     for i in range(len(matriz)):
         suma = 0
@@ -173,39 +168,13 @@ def calcular_recaudacion_por_coche(matriz: list, columna: int) -> list:
     Args:
         matriz (list): Matriz utilizada para recorrer las columnas
         columna (int): Columna elegida para calcular
-=======
-    recaudacion_linea = crear_vector(len(matriz_recaudaciones))
-    for i in range(len(matriz_recaudaciones)):
-        suma = 0
-        for j in range(len(matriz_recaudaciones[i])):
-            suma += matriz_recaudaciones[i][j]
-        recaudacion_linea[i] = suma
-    return recaudacion_linea
-
-#falta la funcion crear vector
-
-def calcular_recaudacion_por_coche(matriz: list, coche: int) -> int:
-    """Suma los elementos de una columna específica de la matriz
-    Args:
-        matriz (list): Matriz utilizada para recorrer la columna
-        coche (int): numero de la columna a sumar
->>>>>>> dbc1b10a25387f9024876290165799d22793357e
     Returns:
         int: Devuelve la suma de la columna especificada
     """
-<<<<<<< HEAD
     total = 0
     for i in range(len(matriz)):
         total += matriz[i][columna-1]
     return total
-=======
-    if verificar_tipo_entero(matriz) and 0 <= coche < len(matriz[0]):
-        total_coche = 0
-        for i in range(len(matriz)):
-            total_coche += matriz[i][coche]
-        return total_coche
-    return 0
->>>>>>> dbc1b10a25387f9024876290165799d22793357e
 
 def calcular_recaudacion_total(matriz: list) -> int:
     """Suma los datos de todos los elementos de la matriz
