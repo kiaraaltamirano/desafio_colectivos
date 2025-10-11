@@ -16,27 +16,23 @@ def main():
                 numero_legajo = int(input("Ingrese el legajo: ")) 
                 validacion = validar_legajo(legajos, numero_legajo)
                 seguir = "si"
-                while validacion == True and seguir == "si":
-                    recaudacion_ingresada = int(input("Ingrese la recaudación: "))
-                    linea = int(input("Ingrese el número de la linea: "))
-                    coche = int(input("Ingrese el número de coche: "))
-                    cargar_matriz(matriz, linea, coche, recaudacion_ingresada)
-                    seguir = input("Desea ingresar otra recaudación? si/no: ")
+                if validar_legajo:
+                    cargar_recaudacion(matriz)
             case "2":
                 mostrar_matriz(matriz)
             case "3":
                 total_lineas = calcular_recaudacion_por_linea(matriz)
-                print(f"La recaudacion por línea es:{total_lineas}")
+                print(f"La recaudacion por línea es:{total_lineas}") #falta mostrar_recaudaciones
             case "4":
-                total_coches = calcular_recaudacion_por_coche(matriz)
-                print(f"La recaudacion por coche es:{total_coches}")
+                coche = ingresar_numero_entero("Ingrese el número de coche: ","Error, reingrese el número",1,5,2)
+                total_coches = calcular_recaudacion_por_coche(matriz,coche)
+                print(f"La recaudacion del coche {coche} es:{total_coches}")
             case "5":
                 recaudacion_total = calcular_recaudacion_total(matriz)
                 print(f"La recaudacion total es de:{recaudacion_total}") 
             case "6":
                 print("Saliendo del programa")
                 break
-                
 
         os.system("pause")
         os.system("cls")
