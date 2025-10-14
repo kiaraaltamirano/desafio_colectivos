@@ -120,23 +120,6 @@ def cargar_matriz(matriz: list, fila: int, columna: int, recaudacion: int):
     if validar_rango(fila, 0, 2) == True and validar_rango(columna, 0, 4):
         matriz[fila][columna] += recaudacion
 
-def verificar_tipo_entero(matriz: list, valor_inicial = 0) -> bool:
-    """Verifica que los elementos de una matriz sean de tipo entero
-    Args:
-        matriz (list): Matriz en la que se buscarán los datos
-        valor_inicial (int, optional): Valor base de los datos de la matriz. Defaults to 0.
-    Returns:
-        bool: True si la verificación salió bien, False en caso contrario
-    """
-    bandera = True
-    for i in range(len(matriz)):
-        for j in range(len(matriz[i])):
-            if type(matriz[i][j]) != int and type(matriz[i][j]) != valor_inicial:
-                bandera = False
-                break
-    
-    return bandera
-
 def crear_vector(size: int, value: any):
     """Crea un vector
     Args:
